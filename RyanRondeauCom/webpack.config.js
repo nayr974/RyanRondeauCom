@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
-const merge = require('webpack-merge');
+const merge = require('webpack-merge'); 
 
 module.exports = (env) => {
     const isDevBuild = !(env && env.prod);
@@ -37,6 +37,7 @@ module.exports = (env) => {
         plugins: [
             new ExtractTextPlugin('site.css'),
             new ExtractTextPlugin('card.css'),
+            new ExtractTextPlugin('animation.css'),
             new webpack.DllReferencePlugin({
                 context: __dirname,
                 manifest: require('./wwwroot/dist/vendor-manifest.json')
